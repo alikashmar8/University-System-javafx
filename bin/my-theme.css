@@ -1,0 +1,41 @@
+.root{
+	-fx-background-color:#2c333d;
+	
+	
+}
+
+
+.tab-header-background{
+	-fx-background-color : #232323;
+}
+.table-view{
+   -fx-background-color: #232323;
+}
+.table-view .column-header-background{
+    -fx-background-color: #424141;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+.label{
+	-fx-text-fill : #f1f40e;
+	
+}
+
+.tab{
+	-fx-background-color : #232323;
+
+}
+.button {
+	-fx-text-fill : #f1f40e;
+	-fx-border-color : #ffff8d;
+	-fx-border-radius: 20px;
+	-fx-background-color : 	 #2c333d;
+	
+}
+.button:hover {
+	-fx-border-color : #ffff8d;
+	-fx-background-radius: 20px;
+	-fx-background-color : 	 #f1f40e;
+	
+}

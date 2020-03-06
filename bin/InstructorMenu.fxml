@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="700.0" prefWidth="1400.0" stylesheets="@my-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InstructorMenuControler">
+   <children>
+      <JFXTabPane prefHeight="700.0" prefWidth="1400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Main">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="instructorWelcome" layoutX="42.0" layoutY="47.0" text="Welcome Back">
+                           <font>
+                              <Font size="66.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="229.0" layoutY="257.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Add Student">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="22.0" layoutY="14.0" text="Name :" />
+                        <Label layoutX="22.0" layoutY="85.0" text="File Number" />
+                        <Label layoutX="22.0" layoutY="168.0" text="Date Of Birth :" />
+                        <Label layoutX="22.0" layoutY="255.0" text="Email :" />
+                        <TextField fx:id="sName" layoutX="22.0" layoutY="31.0" />
+                        <TextField fx:id="sFileNb" layoutX="22.0" layoutY="102.0" />
+                        <TextField fx:id="sEmail" layoutX="22.0" layoutY="272.0" />
+                        <DatePicker fx:id="sAge" layoutX="22.0" layoutY="185.0" />
+                        <Button layoutX="61.0" layoutY="323.0" mnemonicParsing="false" onAction="#addStudent" text="Add Student" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Edit Students">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="studentsTable" layoutX="36.0" layoutY="14.0" prefHeight="334.0" prefWidth="478.0">
+                           <columns>
+                              <TableColumn fx:id="name" maxWidth="238.0" minWidth="238.0" prefWidth="238.00003051757812" text="Student Name" />
+                              <TableColumn fx:id="fileNb" maxWidth="238.0" minWidth="238.0" prefWidth="238.0" text="File Number" />
+                           </columns>
+                        </TableView>
+                        <HBox layoutX="36.0" layoutY="348.0" prefHeight="46.0" prefWidth="478.0" spacing="5.0" AnchorPane.topAnchor="348.0">
+                           <children>
+                              <TextField />
+                              <TextField />
+                              <Button mnemonicParsing="false" onAction="#showStudent" text="Show Details" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" top="10.0" />
+                           </padding>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </HBox>
+                        <TextField fx:id="newSName" layoutX="571.0" layoutY="72.0" />
+                        <TextField fx:id="newSFileNb" layoutX="571.0" layoutY="145.0" />
+                        <TextField fx:id="newSEmail" layoutX="571.0" layoutY="285.0" />
+                        <DatePicker fx:id="newSAge" layoutX="571.0" layoutY="215.0" />
+                        <Label layoutX="571.0" layoutY="55.0" text="Name :" />
+                        <Label layoutX="571.0" layoutY="128.0" text="File Number" />
+                        <Label layoutX="571.0" layoutY="198.0" text="Date Of Birth :" />
+                        <Label layoutX="571.0" layoutY="268.0" text="Email :" />
+                        <Button layoutX="604.0" layoutY="336.0" mnemonicParsing="false" onAction="#save" text="Save" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Assign Courses">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="studentsTable2" layoutX="14.0" layoutY="14.0" prefHeight="243.0" prefWidth="395.0">
+                           <columns>
+                              <TableColumn fx:id="name2" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Student Name" />
+                              <TableColumn fx:id="fileNb2" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="File Number" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="coursesTable" layoutX="500.0" layoutY="14.0" prefHeight="245.0" prefWidth="389.0">
+                           <columns>
+                              <TableColumn fx:id="cNameColumn2" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Course Name" />
+                              <TableColumn fx:id="cCodeColumn2" maxWidth="190.0" minWidth="190.0" prefWidth="190.0" text="Code" />
+                           </columns>
+                        </TableView>
+                        <HBox layoutX="14.0" layoutY="257.0" prefHeight="53.0" prefWidth="395.0" spacing="5.0">
+                           <children>
+                              <TextField />
+                              <TextField />
+                              <Button mnemonicParsing="false" onAction="#showSelectedStudentCourse" prefHeight="25.0" prefWidth="176.0" text="Show Assigned Courses" />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="500.0" layoutY="257.0" prefHeight="45.0" prefWidth="389.0" spacing="5.0">
+                           <children>
+                              <TextField />
+                              <TextField />
+                           </children>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                        <Button layoutX="628.0" layoutY="298.0" mnemonicParsing="false" onAction="#assignSelectedCourses" text="Assign Selected Courses" />
+                        <TableView fx:id="studentCoursesTable" layoutX="14.0" layoutY="336.0" prefHeight="200.0" prefWidth="400.0">
+                           <columns>
+                              <TableColumn fx:id="cNameColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Course Name" />
+                              <TableColumn fx:id="cCodeColumn" maxWidth="200.0" minWidth="200.0" prefWidth="200.0" text="Code" />
+                           </columns>
+                        </TableView>
+                        <Button layoutX="135.0" layoutY="553.0" mnemonicParsing="false" text="Remove Selected Courses" />
+                        <Button layoutX="746.0" layoutY="490.0" mnemonicParsing="false" text="Save" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>

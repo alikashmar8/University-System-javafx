@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="612.0" minWidth="1400.0" prefHeight="700.0" prefWidth="1400.0" stylesheets="@my-theme.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DoctorMenuControler">
+   <children>
+      <JFXTabPane prefHeight="700.0" prefWidth="1400.0" stylesheets="@my-theme.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Main">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="welcomeDoctor" layoutX="84.0" layoutY="51.0" text="Welcome Dr." textFill="#f1f40e">
+                           <font>
+                              <Font size="54.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="147.0" layoutY="192.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Input Marks">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ChoiceBox fx:id="courseChoose" layoutX="525.0" layoutY="71.0" prefWidth="150.0" />
+                        <Button layoutX="731.0" layoutY="71.0" mnemonicParsing="false" onAction="#showStudents" prefHeight="25.0" prefWidth="139.0" text="Show Course Students" />
+                        <TableView fx:id="studentsTable" layoutX="557.0" layoutY="133.0" prefHeight="423.0" prefWidth="296.0">
+                           <columns>
+                              <TableColumn fx:id="name" maxWidth="150.0" minWidth="150.0" prefWidth="150.0" resizable="false" text="Student Name" />
+                              <TableColumn fx:id="fileNb" maxWidth="147.0" minWidth="147.0" prefWidth="147.0" resizable="false" text="Student File Number" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="newMark" layoutX="872.0" layoutY="281.0" prefHeight="25.0" prefWidth="45.0" />
+                        <RadioButton fx:id="partialSet" layoutX="870.0" layoutY="195.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="95.0" selected="true" text="Partial Mark" textFill="#fff600">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="mark" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="finalSet" layoutX="870.0" layoutY="222.0" mnemonicParsing="false" text="Final Mark" textFill="#e5ff00" toggleGroup="$mark" />
+                        <Text layoutX="870.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Insert Mark :" />
+                        <Button layoutX="869.0" layoutY="320.0" mnemonicParsing="false" onAction="#submitMark" text="Submit" />
+                        <TextField fx:id="studentMark" layoutX="869.0" layoutY="446.0" prefHeight="25.0" prefWidth="48.0" />
+                        <Button layoutX="869.0" layoutY="415.0" mnemonicParsing="false" onAction="#showMark" text="Show Mark" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Statistics">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ChoiceBox fx:id="courseChoose2" layoutX="14.0" layoutY="23.0" prefWidth="150.0" />
+                        <Button layoutX="189.0" layoutY="23.0" mnemonicParsing="false" onAction="#selectCourse" text="Select" />
+                        <RadioButton fx:id="partialMark" layoutX="254.0" layoutY="27.0" mnemonicParsing="false" selected="true" text="Partials Mark" textFill="#defc00">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="grp" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="finalMark" layoutX="254.0" layoutY="48.0" mnemonicParsing="false" text="Final Mark" textFill="#f2ea00" toggleGroup="$grp" />
+                        <RadioButton fx:id="fullMark" layoutX="254.0" layoutY="65.0" mnemonicParsing="false" text="Full Mark" textFill="#effc01" toggleGroup="$grp" />
+                        <PieChart fx:id="pieChart" layoutX="94.0" layoutY="110.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Edit Profile">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="31.0" layoutY="21.0" prefHeight="19.0" prefWidth="50.0" text="Name :" />
+                        <Label layoutX="31.0" layoutY="90.0" text="Date Of Birth :" />
+                        <Label layoutX="31.0" layoutY="180.0" text="Username :" />
+                        <Label layoutX="31.0" layoutY="268.0" text="New Password :" />
+                        <Label layoutX="31.0" layoutY="360.0" text="Retype Password :" />
+                        <TextField fx:id="editName" layoutX="31.0" layoutY="40.0" />
+                        <TextField fx:id="editUsername" layoutX="31.0" layoutY="197.0" />
+                        <TextField fx:id="editPassword" layoutX="31.0" layoutY="285.0" />
+                        <TextField fx:id="editRPassword" layoutX="31.0" layoutY="377.0" />
+                        <DatePicker fx:id="editAge" layoutX="31.0" layoutY="103.0" />
+                        <Button layoutX="279.0" layoutY="285.0" mnemonicParsing="false" onAction="#saveEdit" text="Save" />
+                        <TextField fx:id="editEmail" layoutX="31.0" layoutY="467.0" />
+                        <Label layoutX="31.0" layoutY="450.0" text="Email :" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Review Petitions">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="petitionsTable" layoutX="60.0" layoutY="14.0" prefHeight="258.0" prefWidth="246.0">
+                           <columns>
+                              <TableColumn fx:id="pCode" maxWidth="109.0" minWidth="108.0" prefWidth="108.99993896484375" text="Course code" />
+                              <TableColumn fx:id="pFileNb" maxWidth="135.0" minWidth="135.0" prefWidth="135.0" text="Student File Number" />
+                           </columns>
+                        </TableView>
+                        <Button layoutX="124.0" layoutY="294.0" mnemonicParsing="false" onAction="#showPDetails" text="Show Details" />
+                        <TextField fx:id="pcode" editable="false" layoutX="435.0" layoutY="55.0" />
+                        <TextArea fx:id="pNote" editable="false" layoutX="435.0" layoutY="207.0" prefHeight="169.0" prefWidth="237.0" />
+                        <TextField fx:id="pfileNb" editable="false" layoutX="435.0" layoutY="118.0" />
+                        <RadioButton fx:id="accepted" layoutX="435.0" layoutY="428.0" mnemonicParsing="false" selected="true" text="Accepted">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="answer" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rejected" layoutX="548.0" layoutY="428.0" mnemonicParsing="false" text="Rejected" toggleGroup="$answer" />
+                        <Button layoutX="506.0" layoutY="494.0" mnemonicParsing="false" onAction="#submitAnswer" text="Submit" />
+                        <Label layoutX="435.0" layoutY="38.0" text="Course :" />
+                        <Label layoutX="435.0" layoutY="101.0" text="Student File Number :" />
+                        <Label layoutX="435.0" layoutY="190.0" text="Student Note :" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+   </children>
+</AnchorPane>
